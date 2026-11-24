@@ -1,0 +1,69 @@
+{
+  "enabled": true,
+  "mode": "handshake-compatibility",
+  "expectedProtocol": "Terraria326",
+  "logConnections": true,
+  "logStageChanges": false,
+  "logWarnings": true,
+  "logDisconnects": true,
+  "logWorldSwitches": true,
+  "logPlatformInfo": true,
+  "npcRateWarningPerSecond": 450,
+  "warnAfterSecondsWithoutWorldInfo": 25,
+  "summaryIntervalSeconds": 60,
+  "showIP": false,
+  "showPlayerName": false,
+  "statsFile": {
+    "enabled": true,
+    "path": "./logs/dimensions-mcl-stats.json"
+  },
+  "performance": {
+    "highConcurrency": false
+  },
+  "transport": {
+    "enabled": true,
+    "tcp": {
+      "noDelay": true,
+      "keepAlive": true,
+      "keepAliveInitialDelayMs": 30000
+    },
+    "backpressure": {
+      "enabled": true,
+      "highWaterBytes": 524288,
+      "lowWaterBytes": 131072,
+      "maxPauseMs": 2500,
+      "retryCooldownMs": 3000
+    },
+    "logging": {
+      "warnOnCongestion": true,
+      "warningCooldownMs": 30000,
+      "logSummary": false,
+      "summaryIntervalSeconds": 120
+    }
+  },
+  "compatibility": {
+    "enabled": true,
+    "targetProtocol": "Terraria326",
+    "allowedClientVersions": [
+      "Terraria329"
+    ],
+    "handshakeOnly": false,
+    "fullTranslation": true,
+    "logRewrites": true
+  },
+  "worldInfoCapture": {
+    "enabled": false,
+    "path": "./logs/mcl-worldinfo-326.ndjson",
+    "maxSamplesPerSession": 4
+  },
+  "protocol329": {
+    "mode": "bridge",
+    "enabled": true,
+    "experimentalHandshakeRewrite": true,
+    "unsafeAllow326WorldInfoTo329": false,
+    "sampleEvery": 30,
+    "dropMalformedPackets": true
+  },
+  "rejectUnsupportedOnConnect": false,
+  "unsupportedMessage": "This client protocol is not supported by Terraria 1.4.5.8 (326) backend."
+}
